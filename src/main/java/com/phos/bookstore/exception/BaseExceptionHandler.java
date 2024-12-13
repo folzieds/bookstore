@@ -16,4 +16,11 @@ public class BaseExceptionHandler {
     public BaseErrorResponse handleGuestNotFoundException(BookNotFoundException ex){
         return new BaseErrorResponse(ex.getDefaultGlobalCode(), ex.getDefaultUserMessage());
     }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public BaseErrorResponse handleBaseException(Exception ex){
+        return new BaseErrorResponse(ex.getMessage(), ex.getLocalizedMessage());
+    }
 }

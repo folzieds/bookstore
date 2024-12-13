@@ -4,8 +4,6 @@ import com.phos.bookstore.core.model.Genre;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
-
 @Builder
 @Data
 public class BookDto {
@@ -13,7 +11,7 @@ public class BookDto {
     private String title;
     private String author;
     private Genre genre;
-    private LocalDate publicationYear;
+    private Integer publicationYear;
     private String isbn;
 
 }
