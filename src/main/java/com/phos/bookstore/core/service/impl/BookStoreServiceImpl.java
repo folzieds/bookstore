@@ -21,8 +21,9 @@ public class BookStoreServiceImpl implements BookStoreService {
 
     @Override
     public Page<BookDto> search(SearchCriteria searchCriteria, Pageable pageable) {
-
-        return null;
+        return bookRepository
+                .findBySearchParameter(searchCriteria.getAuthor(), searchCriteria.getTitle(), searchCriteria.getGenre(), searchCriteria.getPublicationYear(), pageable)
+                .map(this::convertBookToBookDto);
     }
 
     private BookDto convertBookToBookDto(Book book) {

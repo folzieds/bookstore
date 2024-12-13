@@ -10,5 +10,5 @@ public class SearchCriteria {
     private String title;
     private String author;
     private String genre;
-    private String publicationYear;
+    private Integer publicationYear;
 }
